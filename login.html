@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,
+    initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <!-- 顶部登录注册板块 -->
+    <div class="shell">
+        <div class="top">
+            <span class="off">SIGN IN</span>
+            <div class="button" id="turn">
+                <div class="ball" id="clball"></div>
+            </div>
+            <span class="on">SIGN UP</span>
+        </div>
+        <!-- 登录和注册表单 -->
+        <form action="">
+            <div class="bottom">
+                <!-- 登录窗口 -->
+                <div class="signIn">
+                    <h2>Sign in</h2>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <button>GO</button>
+                </div>
+                <!-- 注册窗口 -->
+                <div class="signUp">
+                    <h2>Sign Up</h2>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <input type="password" placeholder="Confirm Password">
+                    <button>GO</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- 背景山脉 -->
+    <div class="mountain1">
+        <div class="mountain2">
+        </div>
+    </div>
+    <!-- 北极熊 -->
+    <div class="bear"></div>
+    <script>
+        let button = document.querySelector('.button');
+        let ball = document.querySelector('.ball');
+        let bottom = document.querySelector('.bottom');
+        let off = document.querySelector('.off');
+        let on = document.querySelector('.on');
+        let turn = document.getElementById('turn');
+        let clball = document.getElementById('clball');
+        let index = 0;
+        /* 每当点击按钮的时候,index的值就会发生变化,如果index为0的话,那么点击的时候index变为1,反之变为0
+         * 当index的值为0时,按钮里的球划到右边,并且将右边字的透明度变为1,下面的登录卡旋转180度,为注册
+         * 当index的值为1时,按钮里的球划到左边,并且将右边字的透明度变为0.5,下面的登录卡旋转回0度,为登录 */
+        button.addEventListener('click', () => {
+            if (index == 0) {
+                index = 1;
+                ball.style.left = 61 + '%';
+                on.style.opacity = 1;
+                off.style.opacity = .3;
+                bottom.style.transform = "rotateY(180deg)";
+                turn.style.background = 'linear-gradient(to right,#43e97b,#38f9d7,#43e97b)';
+                clball.style.backgroundColor = 'rgba(239, 236, 15,.8)';
+            } else {
+                index = 0;
+                ball.style.left = 0;
+                on.style.opacity = .3;
+                off.style.opacity = 1;
+                bottom.style.transform = "rotateY(0deg)";
+                turn.style.background = 'linear-gradient(to right,#4481eb,#04befe,#4481eb)';
+                clball.style.backgroundColor = 'rgba(255, 192, 203,.8)';
+            }
+        })
+    </script>
+</body>
+
+</html>

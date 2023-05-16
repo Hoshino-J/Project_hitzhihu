@@ -1,0 +1,60 @@
+.bear {
+    position: absolute;
+    bottom: 15px;
+    width: 200px;
+    height: 100px;
+    background: url(images/bear.png) no-repeat;
+    animation: bear 1s steps(8) infinite, move 3s linear forwards;
+}
+
+.bg2 {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    /* 此处不写no-repeat,否则动画结束后会有空白 */
+    background: url(images/mountain2.png);
+    animation: bg-move 25s linear infinite;
+}
+
+.bg1 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 336px;
+    /* 此处不写no-repeat,否则动画结束后会有空白 */
+    background: url(images/mountain1.png);
+    animation: bg-move 25s linear infinite;
+}
+
+/* 北极熊的动画 */
+@keyframes bear {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -1600px 0;
+    }
+}
+
+/* 熊最后跑到最右侧 */
+@keyframes move {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+/* 背景山脉的动画 */
+@keyframes bg-move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -3840px 0;
+    }
+}

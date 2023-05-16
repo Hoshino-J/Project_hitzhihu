@@ -1,0 +1,210 @@
+/* 通配:清楚自带内外边距,清除自带边框 */
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+}
+
+body {
+    /* vw,vh表示占视窗的份数 */
+    width: 100vw;
+    height: 100vh;
+    /* 采用弹性布局 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/background.jpg) no-repeat;
+    background-size: cover;
+    background-position: right;
+    background-color: rgba(31, 36, 41, .99);
+}
+
+/* 登录注册板块 */
+.shell {
+    width: 320px;
+    height: 350px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* 增加透视以显现3D翻转效果 */
+    perspective: 1000px;
+}
+
+.top {
+    width: 300px;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-evenly;
+}
+
+.off,
+.on {
+    color: #fff;
+    transition: .5s;
+    font: 300 20px 'Microsoft Yahei';
+}
+
+.on {
+    /* 不透明度 */
+    opacity: .5;
+}
+
+.button {
+    width: 60px;
+    height: 25px;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb, #a18cd1);
+    border-radius: 20px;
+    position: relative;
+}
+
+.ball {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(232, 76, 61, .8);
+    border-radius: 50%;
+    transition: .5s;
+    box-shadow: 0 0 10px #000;
+    left: 0;
+    transform: translate(-1px);
+}
+
+.bottom {
+    width: 300px;
+    height: 250px;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: .7s;
+    border-radius: 5px;
+}
+
+.bottom>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bottom>div h2 {
+    color: #fff;
+}
+
+.bottom>div input {
+    width: 200px;
+    height: 25px;
+    padding: 0 10px;
+    background-color: rgb(31, 32, 41);
+    color: #fff;
+}
+
+.bottom>div button {
+    width: 80px;
+    height: 30px;
+    color: #333;
+    font-size: 15px;
+    background-color: rgba(255, 235, 167, .8);
+    border-radius: 4px;
+    transition: .3s;
+    margin-bottom: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 235, 167, .8);
+}
+
+.bottom>div button:hover {
+    box-shadow: 0 0 10px rgba(237, 167, 255, 0.8);
+}
+
+.signIn {
+    background-color: rgba(102, 170, 183, .95);
+    background-image: url(../images/mountains_front.png);
+    background-size: cover;
+    background-position: center;
+    transform: translateZ(.1px);
+    border-radius: 25px;
+}
+
+.signUp {
+    background-color: rgba(161, 204, 193, .95);
+    background-image: url(../images/mountains_behind.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    /* 首先将盒子翻转,保证对应面是正面 */
+    transform: rotateY(180deg);
+    /* 给反面的内容也翻转一下,否则就会出现这种卡片转过来了,里面的内容也反了 */
+    border-radius: 25px;
+}
+
+/* 底部奔跑的北极熊动画 */
+.bear {
+    position: absolute;
+    bottom: 0;
+    width: 150px;
+    height: 75px;
+    background: url(../images/bear.png) no-repeat;
+    background-size: cover;
+    /* 我们元素可以添加多个动画， 用逗号分隔 */
+    animation: bear .4s steps(8) infinite, move 4s forwards;
+}
+
+/* 背景山脉的动画 */
+.mountain2 {
+    position: absolute;
+    width: 100%;
+    height: 167px;
+    /* bottom: 10%; */
+    /* 此处不写no-repeat,否则动画结束后会有空白 */
+    background: url(../images/mountain2.png);
+    background-size: cover;
+    animation: mountain-move 25s linear infinite;
+}
+
+.mountain1 {
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 112px;
+    /* 此处不写no-repeat,否则动画结束后会有空白 */
+    background: url(../images/mountain1.png);
+    background-size: cover;
+    animation: mountain-move 25s linear infinite;
+}
+
+@keyframes bear {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -1200px 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+        transform: translateX(-100%);
+    }
+}
+
+/* 背景山脉的动画 */
+@keyframes mountain-move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -3840px 0;
+    }
+}
