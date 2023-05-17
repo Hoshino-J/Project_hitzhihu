@@ -20,6 +20,29 @@ body {
     background-color: rgba(31, 36, 41, .99);
 }
 
+/* logo板块 */
+.logo {
+    position: fixed;
+    top: 15%;
+    font: 900 23px '';
+    color: #333;
+    cursor: pointer;
+}
+
+.logo span {
+    transition: .5s;
+    transition-delay: calc(var(--i)*.1s);
+}
+
+.logo:hover span {
+    color: #fff;
+    text-shadow: 0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 50px #fff,
+        0 0 80px #fff;
+}
+
 /* 登录注册板块 */
 .shell {
     width: 320px;
@@ -44,7 +67,7 @@ body {
 .on {
     color: #fff;
     transition: .5s;
-    font: 300 20px 'Microsoft Yahei';
+    font: 300 20px 'Microsoft YaHei';
 }
 
 .on {
@@ -100,6 +123,14 @@ body {
     padding: 0 10px;
     background-color: rgb(31, 32, 41);
     color: #fff;
+}
+
+.bottom>div .msg {
+    display: block;
+    font-family: 'Microsoft YaHei';
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(232, 76, 61, .8);
 }
 
 .bottom>div button {

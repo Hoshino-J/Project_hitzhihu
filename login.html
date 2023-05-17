@@ -7,11 +7,20 @@
     <meta name="viewport" content="width=device-width, user-scalable=no,
     initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
     <title>Document</title>
+    <!-- css代码引入 -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
+    <div class="logo">
+        <span style="--i:1">H</span>
+        <span style="--i:2">I</span>
+        <span style="--i:3">T</span>
+        <span style="--i:4">.</span>
+        <span style="--i:5">Z</span>
+        <span style="--i:6">H</span>
+    </div>
     <!-- 顶部登录注册板块 -->
     <div class="shell">
         <div class="top">
@@ -22,22 +31,37 @@
             <span class="on">SIGN UP</span>
         </div>
         <!-- 登录和注册表单 -->
-        <form action="">
+        <form class="xtx-form" action="">
             <div class="bottom">
                 <!-- 登录窗口 -->
                 <div class="signIn">
-                    <h2>Sign in</h2>
-                    <input type="text" placeholder="Username">
-                    <input type="password" placeholder="Password">
-                    <button>GO</button>
+                    <h2>登录</h2>
+                    <div data-prop="username_login" class="xtx-form-item">
+                        <input name="username_login" type="text" placeholder="请输入用户名" id="inUn">
+                        <span class="msg"></span>
+                    </div>
+                    <div data-prop="password_login" class="xtx-form-item">
+                        <input name="password_login" type="password" placeholder="请输入密码" id="inPw">
+                        <span class="msg"></span>
+                    </div>
+                    <button>确认</button>
                 </div>
                 <!-- 注册窗口 -->
                 <div class="signUp">
-                    <h2>Sign Up</h2>
-                    <input type="text" placeholder="Username">
-                    <input type="password" placeholder="Password">
-                    <input type="password" placeholder="Confirm Password">
-                    <button>GO</button>
+                    <h2>注册</h2>
+                    <div data-prop="username_register" class="xtx-form-item">
+                        <input name="username_register" type="text" placeholder="请设置用户名" id="inUn">
+                        <span class="msg"></span>
+                    </div>
+                    <div data-prop="password_register" class="xtx-form-item">
+                        <input name="password_register" type="password" placeholder="请设置密码" id="upPw">
+                        <span class="msg"></span>
+                    </div>
+                    <div data-prop="confirm_register" class="xtx-form-item">
+                        <input name="confirm_register" type="password" placeholder="再次确认密码" id="upCfPw">
+                        <span class="msg"></span>
+                    </div>
+                    <button>确认</button>
                 </div>
             </div>
         </form>
@@ -49,37 +73,9 @@
     </div>
     <!-- 北极熊 -->
     <div class="bear"></div>
-    <script>
-        let button = document.querySelector('.button');
-        let ball = document.querySelector('.ball');
-        let bottom = document.querySelector('.bottom');
-        let off = document.querySelector('.off');
-        let on = document.querySelector('.on');
-        let turn = document.getElementById('turn');
-        let clball = document.getElementById('clball');
-        let index = 0;
-        /* 每当点击按钮的时候,index的值就会发生变化,如果index为0的话,那么点击的时候index变为1,反之变为0
-         * 当index的值为0时,按钮里的球划到右边,并且将右边字的透明度变为1,下面的登录卡旋转180度,为注册
-         * 当index的值为1时,按钮里的球划到左边,并且将右边字的透明度变为0.5,下面的登录卡旋转回0度,为登录 */
-        button.addEventListener('click', () => {
-            if (index == 0) {
-                index = 1;
-                ball.style.left = 61 + '%';
-                on.style.opacity = 1;
-                off.style.opacity = .3;
-                bottom.style.transform = "rotateY(180deg)";
-                turn.style.background = 'linear-gradient(to right,#43e97b,#38f9d7,#43e97b)';
-                clball.style.backgroundColor = 'rgba(239, 236, 15,.8)';
-            } else {
-                index = 0;
-                ball.style.left = 0;
-                on.style.opacity = .3;
-                off.style.opacity = 1;
-                bottom.style.transform = "rotateY(0deg)";
-                turn.style.background = 'linear-gradient(to right,#4481eb,#04befe,#4481eb)';
-                clball.style.backgroundColor = 'rgba(255, 192, 203,.8)';
-            }
-        })
+
+    <!-- js代码引入 -->
+    <script src="javascript/login.js">
     </script>
 </body>
 
