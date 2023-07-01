@@ -1,5 +1,10 @@
+//out:../css/
 // 导入base.less
 @import url(base.less);
+
+// less同步生成的css放在css文件夹中
+
+
 // 声明基准值变量
 @baseSize: 3.75vw;
 
@@ -25,7 +30,7 @@
     .logo {
       font-size: ((5.20*3.75) / @baseSize);
       cursor: pointer;
-      color: #333;
+      color: #fff;
 
       span {
         transition: .5s;
@@ -33,7 +38,7 @@
       }
 
       &:hover span {
-        color: #fff;
+        color: rgba(255, 255, 255, .7);
         text-shadow: 0 0 10px #fff,
           0 0 20px #fff,
           0 0 30px #fff,
@@ -86,36 +91,120 @@
       .tabs-list {
         display: flex;
 
+        ul {
+          display: flex;
+
+          .line {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: (28 / @baseSize);
+            height: (2 / @baseSize);
+            border-radius: 2px;
+            transition: .5s;
+          }
+
+          li {
+            &:nth-child(1) {
+              &:hover~.line {
+                left: (14 / @baseSize);
+                background-color: #10b2fa;
+              }
+            }
+
+            &:nth-child(2) {
+              &:hover~.line {
+                left: (14*5 / @baseSize);
+                background-color: #10b2fa;
+              }
+            }
+
+            &:nth-child(3) {
+              &:hover~.line {
+                left: (14*9 / @baseSize);
+                background-color: #10b2fa;
+              }
+            }
+
+            &:nth-child(4) {
+              &:hover~.line {
+                left: (14*13 / @baseSize);
+                background-color: #10b2fa;
+              }
+            }
+
+            &:nth-child(5) {
+              &:hover~.line {
+                left: (14*17 / @baseSize);
+                background-color: #10b2fa;
+              }
+            }
+
+            &:nth-child(6) {
+              &:hover~.line {
+                left: (14*21 / @baseSize);
+                background-color: #10b2fa;
+              }
+            }
+          }
+        }
+
         a {
           padding: 0 (16 / @baseSize);
           // 我们不需要文字换行
           white-space: nowrap;
-          font-size: (14 / @baseSize);
+          font-size: (12 / @baseSize);
+          font-weight: 700;
+          color: #fff;
           height: (40 / @baseSize);
           line-height: (40 / @baseSize);
-        }
-
-        .line {
-          position: absolute;
-          left: (16 / @baseSize);
-          bottom: 0;
-          width: (28 / @baseSize);
-          height: (2 / @baseSize);
-          background-color: #10b2fa;
         }
       }
     }
 
-    // after
-    .after {
+    // 下拉菜单基本外形
+    .drop {
       width: (40 / @baseSize);
       height: (39 / @baseSize);
       text-align: center;
       line-height: (39 / @baseSize);
       color: #fbf7ea;
+      transition: .5s;
 
       i {
         font-size: (20 / @baseSize);
+      }
+    }
+
+    // 下拉菜单
+    .menu {
+      display: none;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 100%;
+      padding-left: 2vw;
+      background: url(../images/menu.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+      box-shadow: @baseSize @baseSize 2*@baseSize rgba(0, 0, 0, .7);
+      border-radius: 0 0 @baseSize @baseSize;
+
+      li {
+        width: 25%;
+      }
+
+      a {
+        padding: 0 (16 / @baseSize);
+        flex-wrap: no-wrap;
+        font-size: (10 / @baseSize);
+        font-weight: 700;
+        color: #fff;
+        height: (40 / @baseSize);
+        line-height: (40 / @baseSize);
+      }
+
+      .menu-item {
+        border-radius: 1vw 1vw 1vw 1vw;
       }
     }
   }

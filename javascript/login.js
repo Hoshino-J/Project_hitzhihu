@@ -108,8 +108,10 @@ function verifyConfirm() {
 // 6.提交模块
 const form = document.querySelector('form')
 form.addEventListener('submit', function (e) {
-    if ((verifyName() && verifyPwd()) || (verifyNameR() && verifyPwdR() && verifyConfirm()))
-        ;
-    else
-        e.preventDefault()
+    if ((!verifyName() || !verifyPwd()) && (!verifyNameR() || !verifyPwdR() || !verifyConfirm()))
+        e.preventDefault();
+    else {
+        window.location.href = './index.html';
+        window.event.returnValue = false;
+    }
 })
