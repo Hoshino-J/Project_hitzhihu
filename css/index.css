@@ -39,7 +39,7 @@ ul {
   box-shadow: 0 0.53333vw 2.66667vw rgba(0, 0, 0, 0.2);
 }
 .suspension .m-navbar {
-  padding: 0 3.2vw 0 4.8vw;
+  padding: 0 1.33333333vw 0 4.26666667vw;
   height: 11.73333333vw;
   display: flex;
   justify-content: space-between;
@@ -61,10 +61,14 @@ ul {
 .suspension .m-navbar .right {
   display: flex;
 }
-.suspension .m-navbar .right .search {
-  color: #ccc;
+.suspension .m-navbar .right .status {
+  overflow: hidden;
+  width: 6.4vw;
+  height: 6.4vw;
+  margin: 0 2.66666667vw;
 }
-.suspension .m-navbar .right .search i {
+.suspension .m-navbar .right .status i {
+  color: #fff;
   font-size: 5.86666667vw;
 }
 .suspension .m-navbar .right .face {
@@ -72,11 +76,17 @@ ul {
   width: 6.4vw;
   height: 6.4vw;
   border-radius: 50%;
-  margin: 0 5.33333333vw;
+  margin: 0 2.66666667vw;
 }
-.suspension .m-navbar .right .app-btn {
-  width: 19.2vw;
+.suspension .m-navbar .right .setUp {
+  overflow: hidden;
+  width: 6.4vw;
   height: 6.4vw;
+  margin: 0 2.66666667vw;
+}
+.suspension .m-navbar .right .setUp i {
+  color: #fff;
+  font-size: 5.86666667vw;
 }
 .suspension .channel-menu {
   position: relative;

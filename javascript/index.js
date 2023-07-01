@@ -18,7 +18,7 @@ dropButton.onclick = function () {
 let color = document.querySelectorAll('.menu-item');
 for (let i = 0; i < color.length; i++) {
     color[i].onmouseover = function () {
-        this.style.backgroundColor = 'rgba(16, 178, 250,.7)';
+        this.style.backgroundColor = 'rgba(68, 191, 136, .4)';
     }
     color[i].onmouseout = function () {
         this.style.backgroundColor = '';

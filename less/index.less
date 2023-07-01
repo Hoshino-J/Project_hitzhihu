@@ -1,9 +1,8 @@
 //out:../css/
-// 导入base.less
-@import url(base.less);
-
 // less同步生成的css放在css文件夹中
 
+// 导入base.less
+@import url(base.less);
 
 // 声明基准值变量
 @baseSize: 3.75vw;
@@ -21,7 +20,7 @@
   box-shadow: 0 0.53333vw 2.66667vw rgb(0 0 0 / 20%);
 
   .m-navbar {
-    padding: 0 (12 / @baseSize) 0 (18 / @baseSize);
+    padding: 0 (5 / @baseSize) 0 (16 / @baseSize);
     height: (44 / @baseSize);
     display: flex;
     justify-content: space-between;
@@ -50,10 +49,14 @@
     .right {
       display: flex;
 
-      .search {
-        color: #ccc;
+      .status {
+        overflow: hidden;
+        width: (24 / @baseSize);
+        height: (24 / @baseSize);
+        margin: 0 (10 / @baseSize);
 
         i {
+          color: #fff;
           font-size: (22 / @baseSize);
         }
       }
@@ -63,13 +66,19 @@
         width: (24 / @baseSize);
         height: (24 / @baseSize);
         border-radius: 50%;
-        margin: 0 (20 / @baseSize);
+        margin: 0 (10 / @baseSize);
       }
 
-      .app-btn {
-        width: (72 / @baseSize);
+      .setUp {
+        overflow: hidden;
+        width: (24 / @baseSize);
         height: (24 / @baseSize);
+        margin: 0 (10 / @baseSize);
 
+        i {
+          color: #fff;
+          font-size: (22 / @baseSize);
+        }
       }
     }
   }
