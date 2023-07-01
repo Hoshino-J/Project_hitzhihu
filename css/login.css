@@ -16,7 +16,7 @@ body {
     align-items: center;
     background: url(../images/background.jpg) no-repeat;
     background-size: cover;
-    background-position: right;
+    background-position: center;
     background-color: rgba(31, 36, 41, .99);
 }
 
