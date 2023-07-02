@@ -313,6 +313,7 @@ footer .tab .middle .add {
   width: 12.8vw;
   height: 12.8vw;
   border-radius: 50%;
+  border: 0;
   background-color: #63aece;
   display: flex;
   justify-content: center;
@@ -349,7 +350,4 @@ footer .tab .open .add {
   opacity: 1;
   pointer-events: auto;
   transform: rotate(var(--angle)) translateY(-18.13333333vw);
-}
-footer .tab .open .add i {
-  transform: rotate(calc(0deg - var(--angle)));
 }

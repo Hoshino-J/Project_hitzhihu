@@ -366,6 +366,7 @@ footer {
         width: (48 / @baseSize);
         height: (48 / @baseSize);
         border-radius: 50%;
+        border: 0;
         background-color: #63aece;
         display: flex;
         justify-content: center;
@@ -410,10 +411,6 @@ footer {
         opacity: 1;
         pointer-events: auto;
         transform: rotate(var(--angle)) translateY(-(68 / @baseSize));
-
-        i {
-          transform: rotate(calc(0deg - var(--angle)));
-        }
       }
     }
   }
