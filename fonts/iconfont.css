@@ -1,8 +1,9 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4147184 */
+  font-family: "iconfont";
+  /* Project id 4147184 */
   src: url('iconfont.woff2?t=1688226757812') format('woff2'),
-       url('iconfont.woff?t=1688226757812') format('woff'),
-       url('iconfont.ttf?t=1688226757812') format('truetype');
+    url('iconfont.woff?t=1688226757812') format('woff'),
+    url('iconfont.ttf?t=1688226757812') format('truetype');
 }
 
 .iconfont {
@@ -47,6 +48,7 @@
 
 .icon-chenggongyijiejue:before {
   content: "\e6d3";
+  color: chartreuse;
 }
 
 .icon-danmu:before {
@@ -55,6 +57,7 @@
 
 .icon-jiazai:before {
   content: "\e671";
+  color: crimson;
 }
 
 .icon-xiala:before {
@@ -76,4 +79,3 @@
 .icon-shouye:before {
   content: "\e818";
 }
-

@@ -1,4 +1,4 @@
-// 下拉菜单
+// 顶部分区下拉菜单
 var open = true;
 let dropButton = document.getElementById('dropdown');
 let menu = document.getElementById('dropmenu');
@@ -24,3 +24,9 @@ for (let i = 0; i < color.length; i++) {
         this.style.backgroundColor = '';
     }
 }
+
+// 底部导航栏
+let tab_middle = document.querySelector('.middle');
+tab_middle.addEventListener('click', (e) => {
+    tab_middle.classList.toggle('open');
+});
