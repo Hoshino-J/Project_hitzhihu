@@ -266,32 +266,13 @@
 }
 
 // 底部模块
-.app {
-  position: fixed;
-  left: 0;
-  bottom: (30 / @baseSize);
-  width: 100%;
-  height: (38 / @baseSize);
-
-  .btn-app {
-    margin: 0 (20 / @baseSize);
-    height: (38 / @baseSize);
-    background-color: purple;
-    border-radius: (19 / @baseSize);
-    text-align: center;
-    line-height: (38 / @baseSize);
-    background-color: #fb7299;
-    color: #fff;
-    box-shadow: 0 0.53333vw 2.66667vw rgb(0 0 0 / 20%);
-  }
-}
-
 footer {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   height: (38 / @baseSize);
+  z-index: 999;
 
   .tab_bar {
     width: 100%;
@@ -414,4 +395,92 @@ footer {
       }
     }
   }
+}
+
+// 弹窗模块
+.shell_ask {
+  display: none;
+  pointer-events: none;
+
+  .ask {
+    overflow: hidden;
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 20*@baseSize;
+    height: 15*@baseSize;
+    background: url(../images/ask.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2vw 3vw rgba(0, 0, 0, .7);
+    border-radius: (2.5*@baseSize);
+    transform: translate(-50%, -50%);
+    transition: .2s .2s ease-in-out;
+
+    header {
+      span {
+        display: flex;
+        position: absolute;
+        left: 8.5%;
+        top: 4.5%;
+        font-size: 4.8vw;
+        font-weight: 600;
+        color: #fff;
+      }
+
+      .close {
+        position: absolute;
+        right: 7.5%;
+        top: 0.1%;
+        border-radius: 50%;
+        width: (25/@baseSize);
+        height: (25/@baseSize);
+        background-color: transparent;
+        color: #2dd87b;
+        border: transparent;
+        font-size: (30/@baseSize);
+        cursor: pointer;
+      }
+    }
+
+    .askText {
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      translate: -50%;
+
+      textarea {
+        border-radius: (@baseSize/2);
+        width: 17.5*@baseSize;
+        height: 9.5*@baseSize;
+        border: (0.5*@baseSize) solid transparent;
+        outline: none;
+      }
+    }
+
+    .submit {
+      outline: none;
+      position: absolute;
+      bottom: 3.5%;
+      left: 50%;
+      transform: translate(-50%);
+      width: (6*@baseSize);
+      height: (2*@baseSize);
+      color: #fff;
+      font-size: 3.95vw;
+      font-weight: 600;
+      border-radius: @baseSize;
+      border: (0.1*@baseSize) solid transparent;
+      background: rgba(0, 184, 148, .7);
+      cursor: pointer;
+      box-shadow: 0 2*@baseSize 2*@baseSize rgba(0, 184, 148, .5);
+    }
+  }
+}
+
+.shell_ask.show {
+  display: block;
+  pointer-events: auto;
 }

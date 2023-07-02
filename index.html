@@ -244,9 +244,15 @@
             </div>
             <div class="tab">
                 <div class="middle">
-                    <button class="add ask" style="--angle:-53deg"><i class="iconfont icon-mashangtiwen"></i></button>
-                    <button class="add dynamic" style="--angle:0deg"><i class="iconfont icon-dongtai"></i></button>
-                    <button class="add share" style="--angle:53deg"><i class="iconfont icon-fenxiang"></i></button>
+                    <button class="add askBtn" style="--angle:-53deg">
+                        <i class="iconfont icon-mashangtiwen"></i>
+                    </button>
+                    <button class="add dynamicBtn" style="--angle:0deg">
+                        <i class="iconfont icon-dongtai"></i>
+                    </button>
+                    <button class="add shareBtn" style="--angle:53deg">
+                        <i class="iconfont icon-fenxiang"></i>
+                    </button>
                 </div>
             </div>
             <div class="tab">
@@ -255,8 +261,33 @@
         </section>
     </footer>
 
-    <script src="./javascript/index.js">
-    </script>
+    <!-- 弹窗模块 -->
+
+    <!-- 提问/分享 模块 -->
+    <!-- 提问窗口 -->
+    <div class="shell_ask">
+        <div class="ask">
+            <header>
+                <span>提出问题&nbsp;~φ(゜▽゜*)♪~</span>
+                <button class="close" id="close"><i class="iconfont icon-quxiao"></i></button>
+            </header>
+            <form action="">
+                <div class="askText">
+                    <textarea name="asks" id="ask" cols="30" rows="10"
+                        placeholder="Please enter the puzzle that confuses you……"></textarea>
+                </div>
+                <button class="submit">确定</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 动态模块 -->
+
+    <!-- 引入js文件 -->
+    <!-- 导入jQuery库 -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <!-- 导入本地js文件 -->
+    <script src="./javascript/index.js"></script>
 </body>
 
 </html>

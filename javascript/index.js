@@ -30,3 +30,15 @@ let tab_middle = document.querySelector('.middle');
 tab_middle.addEventListener('click', (e) => {
     tab_middle.classList.toggle('open');
 });
+
+// 弹窗控制
+const askBtn = document.querySelector('.askBtn'),
+    ask = document.querySelector('.shell_ask'),
+    askForm = document.querySelector('.ask'),
+    close = document.querySelector('.close');
+askBtn.onclick = () => {
+    ask.classList.toggle('show');
+}
+close.onclick = () => {
+    ask.classList.toggle('show');
+}
