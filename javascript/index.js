@@ -53,9 +53,11 @@ shareBtn.onclick = () => {
     if (ask.classList.contains('show'))
         ask.classList.remove('show');
     share.classList.add('show');
+    return false;
 }
 share_close.onclick = () => {
     share.classList.remove('show');
+    return false;
 }
 
 // 分享弹窗中的上传格式控件
@@ -67,22 +69,20 @@ const shareTextBtn = document.querySelector('#textBtn'), shareText = document.qu
 shareTextBtn.onclick = () => {
     uploadShell.style.display = 'none';
     shareText.style.display = 'block', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'none';
+    return false;
 }
 sharePictureBtn.onclick = () => {
     uploadShell.style.display = 'block';
     shareText.style.display = 'none', sharePicture.style.display = 'block', shareVideo.style.display = 'none', shareFile.style.display = 'none';
+    return false;
 }
 shareVideoBtn.onclick = () => {
     uploadShell.style.display = 'block';
     shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'block', shareFile.style.display = 'none';
+    return false;
 }
 shareFileBtn.onclick = () => {
     uploadShell.style.display = 'block';
     shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'block';
-}
-
-const submitWindows = document.querySelector('.submit');
-submitWindows.onclick = () => {
-    uploadShell.style.display = 'none';
-    shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'none';
+    return false;
 }

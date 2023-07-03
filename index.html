@@ -270,31 +270,31 @@
                 <span>>提出问题&nbsp;~φ(゜▽゜*)♪~</span>
                 <button class="close" id="ask_close"><i class="iconfont icon-quxiao"></i></button>
             </header>
-            <form action="">
+            <form action="#" method="post">
                 <div class="askText">
                     <textarea name="asks" id="ask" cols="30" rows="10"
                         placeholder="Please enter the puzzle that confuses you……"></textarea>
                 </div>
-                <input type="submit" class="submit">确定</input>
+                <button type="submit" class="submit">确定</button>
             </form>
         </div>
     </div>
     <!-- 分享窗口 -->
     <div class="shell_share">
-        <div class="share">
-            <header>
-                <span>>分享一篇帖子吧(●'◡'●)</span>
-                <button class="close" id="share_close"><i class="iconfont icon-quxiao"></i></button>
-            </header>
-            <div class="shareContent">
-                <p>选择上传格式:</p>
-                <ul>
-                    <li><button id="textBtn"><i class="iconfont icon-icon1"></i></button></li>
-                    <li><button id="pictureBtn"><i class="iconfont icon-tupiantianjia"></i></button></li>
-                    <li><button id="videoBtn"><i class="iconfont icon-duanshipinhuati"></i></button></li>
-                    <li><button id="fileBtn"><i class="iconfont icon-sucai"></i></button></li>
-                </ul>
-                <form action="">
+        <form action="#" method="post">
+            <div class="share">
+                <header>
+                    <span>>分享一篇帖子吧(●'◡'●)</span>
+                    <button class="close" id="share_close"><i class="iconfont icon-quxiao"></i></button>
+                </header>
+                <div class="shareContent">
+                    <p>选择上传格式:</p>
+                    <ul>
+                        <li><button id="textBtn"><i class="iconfont icon-icon1"></i></button></li>
+                        <li><button id="pictureBtn"><i class="iconfont icon-tupiantianjia"></i></button></li>
+                        <li><button id="videoBtn"><i class="iconfont icon-duanshipinhuati"></i></button></li>
+                        <li><button id="fileBtn"><i class="iconfont icon-sucai"></i></button></li>
+                    </ul>
                     <!-- 上传文本 -->
                     <textarea name="shareText" id="shareText" cols="30" rows="10"
                         placeholder="Please enter the best idea you want to share!"></textarea>
@@ -317,10 +317,10 @@
                         <input type="file" id="shareFile"
                             accept="application/pdf,application/msword,application/msexcel">
                     </div>
-                </form>
-            </div>
-            <input type="submit" class="submit">确定</input>
-        </div>
+                </div>
+                <button type="submit" class="submit">确定</button>
+        </form>
+    </div>
     </div>
 
     <!-- 动态模块 -->
