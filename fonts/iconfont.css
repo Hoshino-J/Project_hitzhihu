@@ -24,18 +24,30 @@
 
 .icon-icon1:before {
   content: "\e693";
+  background-image: linear-gradient(135deg, #F0FF00 10%, #58CFFB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon-sucai:before {
   content: "\e602";
+  background-image: linear-gradient(135deg, #FFA8A8 10%, #FCFF00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon-tupiantianjia:before {
   content: "\ec7d";
+  background-image: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon-duanshipinhuati:before {
   content: "\e876";
+  background-image: linear-gradient(135deg, #EE9AE5 10%, #5961F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .icon-icon:before {

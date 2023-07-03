@@ -35,10 +35,54 @@ tab_middle.addEventListener('click', (e) => {
 const askBtn = document.querySelector('.askBtn'),
     ask = document.querySelector('.shell_ask'),
     askForm = document.querySelector('.ask'),
-    close = document.querySelector('.close');
+    ask_close = document.querySelector('#ask_close');
 askBtn.onclick = () => {
-    ask.classList.toggle('show');
+    if (share.classList.contains('show'))
+        share.classList.remove('show');
+    ask.classList.add('show');
 }
-close.onclick = () => {
-    ask.classList.toggle('show');
+ask_close.onclick = () => {
+    ask.classList.remove('show');
+}
+
+const shareBtn = document.querySelector('.shareBtn'),
+    share = document.querySelector('.shell_share'),
+    shareForm = document.querySelector('.share'),
+    share_close = document.querySelector('#share_close');
+shareBtn.onclick = () => {
+    if (ask.classList.contains('show'))
+        ask.classList.remove('show');
+    share.classList.add('show');
+}
+share_close.onclick = () => {
+    share.classList.remove('show');
+}
+
+// 分享弹窗中的上传格式控件
+const shareTextBtn = document.querySelector('#textBtn'), shareText = document.querySelector('#shareText'),
+    sharePictureBtn = document.querySelector('#pictureBtn'), sharePicture = document.querySelector('.image-container'),
+    shareVideoBtn = document.querySelector('#videoBtn'), shareVideo = document.querySelector('.video-container'),
+    shareFileBtn = document.querySelector('#fileBtn'), shareFile = document.querySelector('.file-container'),
+    uploadShell = document.querySelector('.divUpload');
+shareTextBtn.onclick = () => {
+    uploadShell.style.display = 'none';
+    shareText.style.display = 'block', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'none';
+}
+sharePictureBtn.onclick = () => {
+    uploadShell.style.display = 'block';
+    shareText.style.display = 'none', sharePicture.style.display = 'block', shareVideo.style.display = 'none', shareFile.style.display = 'none';
+}
+shareVideoBtn.onclick = () => {
+    uploadShell.style.display = 'block';
+    shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'block', shareFile.style.display = 'none';
+}
+shareFileBtn.onclick = () => {
+    uploadShell.style.display = 'block';
+    shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'block';
+}
+
+const submitWindows = document.querySelector('.submit');
+submitWindows.onclick = () => {
+    uploadShell.style.display = 'none';
+    shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'none';
 }

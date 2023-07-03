@@ -398,6 +398,8 @@ footer {
 }
 
 // 弹窗模块
+
+// 提问弹窗
 .shell_ask {
   display: none;
   pointer-events: none;
@@ -424,10 +426,12 @@ footer {
         display: flex;
         position: absolute;
         left: 8.5%;
-        top: 4.5%;
-        font-size: 4.8vw;
-        font-weight: 600;
-        color: #fff;
+        top: 6.5%;
+        font-size: 4.2vw;
+        font-weight: 700;
+        background-image: linear-gradient(135deg, #C2FFD8 10%, #465EFB 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       .close {
@@ -481,6 +485,294 @@ footer {
 }
 
 .shell_ask.show {
+  display: block;
+  pointer-events: auto;
+}
+
+// 分享弹窗
+.shell_share {
+  display: none;
+  pointer-events: none;
+
+  .share {
+    overflow: hidden;
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 20*@baseSize;
+    height: 15*@baseSize;
+    background: url(../images/share.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2vw 3vw rgba(0, 0, 0, .7);
+    border-radius: (2.5*@baseSize);
+    transform: translate(-50%, -50%);
+    transition: .2s .2s ease-in-out;
+
+    header {
+      span {
+        display: flex;
+        position: absolute;
+        left: 8.5%;
+        top: 6.5%;
+        font-size: 4.2vw;
+        font-weight: 700;
+        background-image: linear-gradient(135deg, #81FFEF 10%, #F067B4 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .close {
+        position: absolute;
+        right: 7.5%;
+        top: 0.1%;
+        border-radius: 50%;
+        width: (25/@baseSize);
+        height: (25/@baseSize);
+        background-color: transparent;
+        color: #ff9aba;
+        border: transparent;
+        font-size: (30/@baseSize);
+        cursor: pointer;
+      }
+    }
+
+    .shareContent {
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      translate: -50%;
+      // background-color: #fff;
+      border-radius: (@baseSize/2);
+      width: 17.5*@baseSize;
+      height: 9.5*@baseSize;
+      // padding: (0.5*@baseSize);
+      outline: none;
+      border-top: (0.05*@baseSize) solid #fff;
+
+      p {
+        color: #fff;
+        font-size: 0.75*@baseSize;
+        font-weight: 500;
+        margin: (0.5*@baseSize);
+      }
+
+      ul {
+        margin: 0.5*@baseSize 0.5*@baseSize 0 0.5*@baseSize;
+        height: 2*@baseSize;
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+
+        button {
+          outline: none;
+          border: transparent;
+          width: 6.4vw;
+          height: 6.4vw;
+          display: flex;
+          align-items: center;
+          border-radius: 50%;
+          justify-content: center;
+          cursor: pointer;
+          background-color: #fff;
+
+          i {
+            font-size: (17/@baseSize);
+            transform: scale(.7);
+            transition: transform .2s .2s linear;
+          }
+
+          &:hover {
+            i {
+              transform: scale(1);
+            }
+          }
+        }
+
+        #textBtn {
+          border: (1/@baseSize) solid #2dd87b;
+
+          &:hover {
+            background-color: #2dd87b;
+
+            .icon-icon1:before {
+              background-image: linear-gradient(135deg, #fff, #fff);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+
+        #pictureBtn {
+          border: (1/@baseSize) solid #10b2fa;
+
+          &:hover {
+            background-color: #10b2fa;
+
+            .icon-tupiantianjia:before {
+              background-image: linear-gradient(135deg, #fff, #fff);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+
+        #videoBtn {
+          border: (1/@baseSize) solid #a980ee;
+
+          &:hover {
+            background-color: #a980ee;
+
+            .icon-duanshipinhuati:before {
+              background-image: linear-gradient(135deg, #fff, #fff);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+
+        #fileBtn {
+          border: (1/@baseSize) solid #f97f51;
+
+          &:hover {
+            background-color: #f97f51;
+
+            .icon-sucai:before {
+              background-image: linear-gradient(135deg, #fff, #fff);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+          }
+        }
+      }
+
+      // 文本控件
+      #shareText {
+        display: none;
+        border-radius: (@baseSize/2);
+        width: 16.4*@baseSize;
+        height: 5.0*@baseSize;
+        border: (1/@baseSize) solid #2dd87b;
+        margin: (0.5*@baseSize);
+        padding: (0.3*@baseSize);
+        outline: none;
+        box-shadow: 0 2.5vw 2.5vw rgba(45, 216, 123, .5);
+        resize: none;
+      }
+
+      // 图片/视频/文件控件
+      .divUpload {
+        display: none;
+        border-radius: (@baseSize/2);
+        width: 16.4*@baseSize;
+        height: 5.0*@baseSize;
+        border: (0.5*@baseSize) solid transparent;
+        margin: (0.5*@baseSize);
+        outline: none;
+
+        .image-container {
+          position: absolute;
+          left: 50%;
+          top: 60%;
+          transform: translate(-50%);
+          width: 11.8*@baseSize;
+          height: 2.5*@baseSize;
+          line-height: 1.3*@baseSize;
+          border: (1/@baseSize) solid #10b2fa;
+          border-radius: (@baseSize/2);
+          background-color: rgba(255, 255, 255, .9);
+          text-align: center;
+          outline: none;
+          box-shadow: 0 2.5vw 2.5vw rgba(16, 178, 250, .5);
+
+          p {
+            background-image: linear-gradient(135deg, #72EDF2 10%, #5151E5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        #sharePicture {
+          display: none;
+        }
+
+        .video-container {
+          position: absolute;
+          left: 50%;
+          top: 60%;
+          transform: translate(-50%);
+          width: 11.8*@baseSize;
+          height: 2.5*@baseSize;
+          line-height: 1.3*@baseSize;
+          border: (1/@baseSize) solid #a980ee;
+          border-radius: (@baseSize/2);
+          background-color: rgba(255, 255, 255, .9);
+          text-align: center;
+          outline: none;
+          box-shadow: 0 2.5vw 2.5vw rgba(169, 128, 238, .5);
+
+          p {
+            background-image: linear-gradient(135deg, #EE9AE5 10%, #5961F9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        #shareVideo {
+          display: none;
+        }
+
+        .file-container {
+          position: absolute;
+          left: 50%;
+          top: 60%;
+          transform: translate(-50%);
+          width: 11.8*@baseSize;
+          height: 2.5*@baseSize;
+          line-height: 1.3*@baseSize;
+          border: (1/@baseSize) solid #f97f51;
+          border-radius: (@baseSize/2);
+          background-color: rgba(255, 255, 255, .9);
+          text-align: center;
+          outline: none;
+          box-shadow: 0 2.5vw 2.5vw rgba(249, 127, 81, .5);
+
+          p {
+            background-image: linear-gradient(135deg, #FFA8A8 10%, #FCFF00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+
+        #shareFile {
+          display: none;
+        }
+      }
+    }
+
+    .submit {
+      outline: none;
+      position: absolute;
+      bottom: 3.5%;
+      left: 50%;
+      transform: translate(-50%);
+      width: (6*@baseSize);
+      height: (2*@baseSize);
+      color: #fff;
+      font-size: 3.95vw;
+      font-weight: 600;
+      border-radius: @baseSize;
+      border: (0.1*@baseSize) solid transparent;
+      background: rgba(0, 183, 255, 0.7);
+      cursor: pointer;
+      box-shadow: 0 2*@baseSize 2*@baseSize rgba(0, 183, 255, .5);
+    }
+  }
+}
+
+.shell_share.show {
   display: block;
   pointer-events: auto;
 }
