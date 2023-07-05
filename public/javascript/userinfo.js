@@ -91,7 +91,7 @@ shareFileBtn.onclick = () => {
 
 // 关注与个人分页切换
 const focusBtn = document.querySelector('.focus'), personalBtn = document.querySelector('.personal'),
-    dynamicList = document.querySelector('.dynamic-list'), archiveList = document.querySelector('.archiveList');
+    dynamicList = document.querySelector('.dynamic-list'), archiveList = document.querySelector('.archive-list');
 focusBtn.onclick = () => {
     focusBtn.classList.add('on'), personalBtn.classList.remove('on');
     dynamicList.classList.add('show'), archiveList.classList.remove('show');
@@ -99,4 +99,27 @@ focusBtn.onclick = () => {
 personalBtn.onclick = () => {
     personalBtn.classList.add('on'), focusBtn.classList.remove('on');
     archiveList.classList.add('show'), dynamicList.classList.remove('show');
+}
+
+// 赞同回答与反对回答
+const agreeBtn = document.querySelector('.agreeVote'), disagreeBtn = document.querySelector('.disagreeVote');
+agreeBtn.onclick = () => {
+    agreeBtn.classList.add('is-active'), disagreeBtn.classList.remove('is-active');
+}
+disagreeBtn.onclick = () => {
+    disagreeBtn.classList.add('is-active'), agreeBtn.classList.remove('is-active');
+}
+
+const agreeABtn = document.querySelector('.agreeVote_article'), disagreeABtn = document.querySelector('.disagreeVote_article');
+agreeABtn.onclick = () => {
+    agreeABtn.classList.add('is-active'), disagreeABtn.classList.remove('is-active');
+}
+disagreeABtn.onclick = () => {
+    disagreeABtn.classList.add('is-active'), agreeABtn.classList.remove('is-active');
+}
+
+// 切换到首页
+document.querySelector('#turnToHome').onclick = () => {
+    window.location.href = './index.html';
+    window.event.returnValue = false;
 }

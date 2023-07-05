@@ -115,3 +115,9 @@ shareFileBtn.onclick = () => {
     shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'block';
     return false;
 }
+
+// 切换到个人信息页面
+document.querySelector('#turnToUser').onclick = () => {
+    window.location.href = './userinfo.html';
+    window.event.returnValue = false;
+}

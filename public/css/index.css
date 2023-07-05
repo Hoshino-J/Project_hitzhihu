@@ -27,6 +27,9 @@ ul {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+.clearfloat {
+  clear: both;
+}
 .suspension {
   position: fixed;
   top: 0;
@@ -246,6 +249,14 @@ footer .tab {
   position: relative;
   display: flex;
   flex: 1;
+}
+footer .tab .icon-shouye {
+  text-shadow: 1px 1px 2px #63aece, 0 0 1em #2dd87b, 0 0 0.2em #2dd87b;
+}
+footer .tab #turnToUser {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
 }
 footer .tab i {
   position: absolute;

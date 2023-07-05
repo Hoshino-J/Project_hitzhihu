@@ -18,7 +18,7 @@ app.post('/login', (req, res) => {
 });
 
 // 启动服务器
-const port = 3000;
+const port = 8080;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
