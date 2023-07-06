@@ -41,6 +41,8 @@ const askBtn = document.querySelector('.askBtn'),
 askBtn.onclick = () => {
     if (share.classList.contains('show'))
         share.classList.remove('show');
+    if (message.classList.contains('show'))
+        message.classList.remove('show');
     ask.classList.add('show');
 }
 ask_close.onclick = () => {
@@ -54,11 +56,29 @@ const shareBtn = document.querySelector('.shareBtn'),
 shareBtn.onclick = () => {
     if (ask.classList.contains('show'))
         ask.classList.remove('show');
+    if (message.classList.contains('show'))
+        message.classList.remove('show');
     share.classList.add('show');
     return false;
 }
 share_close.onclick = () => {
     share.classList.remove('show');
+    return false;
+}
+
+const messageBtn = document.querySelector('.messageBtn'),
+    message = document.querySelector('.shell_message'),
+    message_close = document.querySelector('#message_close');
+messageBtn.onclick = () => {
+    if (ask.classList.contains('show'))
+        ask.classList.remove('show');
+    if (share.classList.contains('show'))
+        share.classList.remove('show');
+    message.classList.add('show');
+    return false;
+}
+message_close.onclick = () => {
+    message.classList.remove('show');
     return false;
 }
 
@@ -89,16 +109,45 @@ shareFileBtn.onclick = () => {
     return false;
 }
 
-// 关注与个人分页切换
+// 信息侧栏
+const menuBtn = document.getElementById('menuBtn'), menuSide = document.querySelector('.menuSide'), menuText = document.querySelectorAll('.menuText');
+menuBtn.addEventListener('click', () => {
+    menuSide.classList.toggle('open');
+    menuText.forEach(function (text, index) {
+        setTimeout(() => {
+            text.classList.toggle('open2');
+        }, index * 50);
+    });
+});
+
+// tab分页切换
 const focusBtn = document.querySelector('.focus'), personalBtn = document.querySelector('.personal'),
-    dynamicList = document.querySelector('.dynamic-list'), archiveList = document.querySelector('.archive-list');
+    solveBtn = document.querySelector('.solve'), problemBtn = document.querySelector('.problem'),
+    dynamicList = document.querySelector('.dynamic-list'), archiveList = document.querySelector('.archive-list'),
+    answerList = document.querySelector('.answer-list'), askList = document.querySelector('.ask-list');
 focusBtn.onclick = () => {
-    focusBtn.classList.add('on'), personalBtn.classList.remove('on');
-    dynamicList.classList.add('show'), archiveList.classList.remove('show');
+    focusBtn.classList.add('on'), personalBtn.classList.remove('on'),
+        solveBtn.classList.remove('on'), problemBtn.classList.remove('on');
+    dynamicList.classList.add('show'), archiveList.classList.remove('show'),
+        answerList.classList.remove('show'), askList.classList.remove('show');
 }
 personalBtn.onclick = () => {
-    personalBtn.classList.add('on'), focusBtn.classList.remove('on');
-    archiveList.classList.add('show'), dynamicList.classList.remove('show');
+    focusBtn.classList.remove('on'), personalBtn.classList.add('on'),
+        solveBtn.classList.remove('on'), problemBtn.classList.remove('on');
+    dynamicList.classList.remove('show'), archiveList.classList.add('show'),
+        answerList.classList.remove('show'), askList.classList.remove('show');
+}
+solveBtn.onclick = () => {
+    focusBtn.classList.remove('on'), personalBtn.classList.remove('on'),
+        solveBtn.classList.add('on'), problemBtn.classList.remove('on');
+    dynamicList.classList.remove('show'), archiveList.classList.remove('show'),
+        answerList.classList.add('show'), askList.classList.remove('show');
+}
+problemBtn.onclick = () => {
+    focusBtn.classList.remove('on'), personalBtn.classList.remove('on'),
+        solveBtn.classList.remove('on'), problemBtn.classList.add('on');
+    dynamicList.classList.remove('show'), archiveList.classList.remove('show'),
+        answerList.classList.remove('show'), askList.classList.add('show');
 }
 
 // 赞同回答与反对回答
@@ -116,6 +165,35 @@ agreeABtn.onclick = () => {
 }
 disagreeABtn.onclick = () => {
     disagreeABtn.classList.add('is-active'), agreeABtn.classList.remove('is-active');
+}
+
+const agreeAnBtn = document.querySelector('.agreeVote_answer'), disagreeAnBtn = document.querySelector('.disagreeVote_answer');
+agreeAnBtn.onclick = () => {
+    agreeAnBtn.classList.add('is-active'), disagreeAnBtn.classList.remove('is-active');
+}
+disagreeAnBtn.onclick = () => {
+    disagreeAnBtn.classList.add('is-active'), agreeAnBtn.classList.remove('is-active');
+}
+
+// 关注答主
+const followBtn = document.querySelector('.followBtn');
+var flag = true;
+followBtn.onclick = () => {
+    if (flag)
+        followBtn.classList.add('followed');
+    else
+        followBtn.classList.remove('followed');
+    flag = !flag;
+}
+
+const followABtn = document.querySelector('.followABtn');
+var flagA = true;
+followABtn.onclick = () => {
+    if (flagA)
+        followABtn.classList.add('followed');
+    else
+        followABtn.classList.remove('followed');
+    flagA = !flagA;
 }
 
 // 切换到首页

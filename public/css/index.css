@@ -669,3 +669,242 @@ footer .tab .open .add {
   display: block;
   pointer-events: auto;
 }
+nav .iconfont {
+  font-size: 3.75vw;
+}
+.menuSide {
+  display: none;
+  position: fixed;
+  width: 8vw;
+  height: 150vw;
+  background: url(../images/message.jpg) repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 999;
+  top: 19vw;
+  margin: auto;
+  border-radius: 1.7067vw;
+  transform: 0.3s ease 0.15s;
+  font-family: sans-serif;
+}
+.menuSide a {
+  text-decoration: none;
+}
+.menuSide .actionsBar {
+  width: 100%;
+  height: 10%;
+  padding: 1.0667vw;
+  overflow: hidden;
+}
+.menuSide .actionsBar div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 1.0667vw;
+  transition: 0.3s ease;
+}
+.menuSide .actionsBar div button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1.0667vw;
+  color: #fff;
+  width: 6vw;
+  height: 6vw;
+  transition: 0.3s ease;
+  font-size: 2.1333vw;
+}
+.menuSide .actionsBar div button:hover {
+  background-color: #364152;
+}
+.menuSide .actionsBar div h3 {
+  width: calc(100% - 6vw);
+  text-align: center;
+}
+.menuSide .optionsBar {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 60%;
+  padding: 0 1.0667vw;
+  align-items: center;
+  flex-direction: column;
+}
+.menuSide .optionsBar .menuItem {
+  width: 100%;
+  height: 6vw;
+  margin: 0.64vw;
+}
+.menuSide .optionsBar .menuItem .menuOption {
+  font-size: 2.1333vw;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 1.0667vw;
+  transition: 0.3s ease;
+}
+.menuSide .optionsBar .menuItem .menuOption:hover {
+  background-color: #364152;
+}
+.menuSide .optionsBar .menuItem .menuOption i {
+  width: 6vw;
+  height: 6vw;
+  text-align: center;
+  color: #fff;
+  font-weight: 550;
+}
+.menuSide .optionsBar .menuItem .menuOption h5 {
+  width: calc(100% - 6vw);
+}
+.menuSide .about {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2.1333vw;
+  flex-direction: column;
+  font-family: sans-serif;
+  opacity: 0;
+  white-space: nowrap;
+  transition: 0.3s ease 0.15s;
+}
+.menuSide .menuBreak {
+  width: 100%;
+  height: 1.3333vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menuSide .menuBreak hr {
+  width: 70%;
+  height: 0.4vw;
+  background-color: #fff;
+  border: none;
+  border-radius: 0.6667vw;
+}
+.menuSide .themeBar {
+  overflow: hidden;
+  width: 100%;
+  height: 10%;
+  padding: 1.0667vw;
+}
+.menuSide .themeBar div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 1.0667vw;
+  transition: 0.3s ease;
+}
+.menuSide .themeBar div button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 1.0667vw;
+  width: 100%;
+  height: 6vw;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: #FC0 1px 0 10px;
+  transition: 0.3s ease;
+  font-size: 2.1333vw;
+  background: rgba(54, 65, 82, 0.7);
+}
+.menuSide .themeBar div button:hover {
+  background-color: #364152;
+}
+.menuSide .menuUser {
+  width: 100%;
+  height: 10%;
+}
+.menuSide .menuUser a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 1.0667vw;
+  position: relative;
+}
+.menuSide .menuUser a div {
+  width: 6vw;
+  height: 6vw;
+  position: relative;
+  border-radius: 1.0667vw;
+}
+.menuSide .menuUser a div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.0667vw;
+}
+.menuSide .menuUser a .Username {
+  width: calc(70% - 6vw);
+}
+.menuSide .menuUser a p {
+  width: calc(30% - 6vw);
+}
+.menuSide .menuUser a:hover p {
+  animation: animArrow 0.3s ease 2;
+}
+.menuSide .menuUser .userInfo {
+  position: absolute;
+  width: 42.6667vw;
+  height: 38.4vw;
+  opacity: 0;
+  pointer-events: none;
+  top: 34%;
+  left: 3.2vw;
+  transition: 0.3s ease;
+  transform: scale(0);
+  transform-origin: bottom left;
+}
+.menuSide .menuUser:hover .userInfo {
+  pointer-events: all;
+  opacity: 1;
+  transform: scale(1);
+}
+.menuSide .menuText {
+  color: rgba(255, 255, 255, 0.8);
+  transform: translate(-33.3333vw);
+  opacity: 0;
+  transition: transform 0.3s ease 0.1s;
+}
+.menuSide .menuText.open2 {
+  opacity: 1;
+  transform: translateX(0);
+}
+.menuSide .menuText.open2:hover {
+  color: #10b2fa;
+}
+.menuSide .menuText.menuTextHead.open2 {
+  transform: translateX(17.5vw);
+}
+.menuSide.open {
+  width: 50vw;
+}
+@keyframes animArrow {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0.6667vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.shell_message.show {
+  display: block;
+  pointer-events: auto;
+}

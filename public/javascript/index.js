@@ -68,6 +68,8 @@ const askBtn = document.querySelector('.askBtn'),
 askBtn.onclick = () => {
     if (share.classList.contains('show'))
         share.classList.remove('show');
+    if (message.classList.contains('show'))
+        message.classList.remove('show');
     ask.classList.add('show');
 }
 ask_close.onclick = () => {
@@ -81,6 +83,8 @@ const shareBtn = document.querySelector('.shareBtn'),
 shareBtn.onclick = () => {
     if (ask.classList.contains('show'))
         ask.classList.remove('show');
+    if (message.classList.contains('show'))
+        message.classList.remove('show');
     share.classList.add('show');
     return false;
 }
@@ -89,6 +93,21 @@ share_close.onclick = () => {
     return false;
 }
 
+const messageBtn = document.querySelector('.messageBtn'),
+    message = document.querySelector('.shell_message'),
+    message_close = document.querySelector('#message_close');
+messageBtn.onclick = () => {
+    if (ask.classList.contains('show'))
+        ask.classList.remove('show');
+    if (share.classList.contains('show'))
+        share.classList.remove('show');
+    message.classList.add('show');
+    return false;
+}
+message_close.onclick = () => {
+    message.classList.remove('show');
+    return false;
+}
 // 分享弹窗中的上传格式控件
 const shareTextBtn = document.querySelector('#textBtn'), shareText = document.querySelector('#shareText'),
     sharePictureBtn = document.querySelector('#pictureBtn'), sharePicture = document.querySelector('.image-container'),
@@ -115,6 +134,17 @@ shareFileBtn.onclick = () => {
     shareText.style.display = 'none', sharePicture.style.display = 'none', shareVideo.style.display = 'none', shareFile.style.display = 'block';
     return false;
 }
+
+// 信息侧栏
+const menuBtn = document.getElementById('menuBtn'), menuSide = document.querySelector('.menuSide'), menuText = document.querySelectorAll('.menuText');
+menuBtn.addEventListener('click', () => {
+    menuSide.classList.toggle('open');
+    menuText.forEach(function (text, index) {
+        setTimeout(() => {
+            text.classList.toggle('open2');
+        }, index * 50);
+    });
+});
 
 // 切换到个人信息页面
 document.querySelector('#turnToUser').onclick = () => {
